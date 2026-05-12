@@ -1,0 +1,165 @@
+{
+  "id": "f7da744e-2924-4ea8-a980-08f7069addbe",
+  "version": "2.0",
+  "name": "Proyecto_VV_Abad_Sebastian",
+  "url": "https://www.saucedemo.com/",
+  "tests": [{
+    "id": "963dc740-6493-461b-af3f-c6f258f3ec4b",
+    "name": "CP01 - Flujo de Autentiacion",
+    "commands": [{
+      "id": "05605c3e-4a29-4e82-b9ed-77861f854c4a",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.saucedemo.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0100abc-a922-40c1-9d30-160cf3bb5b6e",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"username\"]",
+      "targets": [
+        ["css=*[data-test=\"username\"]", "css:data-attr"],
+        ["id=user-name", "id"],
+        ["name=user-name", "name"],
+        ["css=#user-name", "css:finder"],
+        ["xpath=//input[@id='user-name']", "xpath:attributes"],
+        ["xpath=//div[@id='login_button_container']/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a716ae2-575b-4dc9-b407-bccbcb03c3bc",
+      "comment": "",
+      "command": "executeScript",
+      "target": "(function(){var s=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;var u=document.querySelector('[data-test=\"username\"]');var p=document.querySelector('[data-test=\"password\"]');s.call(u,'standard_user');u.dispatchEvent(new Event('input',{bubbles:true}));s.call(p,'secret_sauce');p.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('[data-test=\"login-button\"]').click();})();",
+      "targets": [],
+      "value": "standard_user"
+    }, {
+      "id": "7ea7f03b-7b27-46bf-a3f5-6703a83bfb78",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.inventory_list",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b11fb096-39b3-446a-b50b-3316c3835f05",
+    "name": "CP02 - Validacion Negativa",
+    "commands": [{
+      "id": "caa506da-5900-4e9b-b756-126549ce8047",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.saucedemo.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f7ccc07-43fe-443d-af89-c5c0967c6eff",
+      "comment": "",
+      "command": "executeScript",
+      "target": "(function(){var s=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;var u=document.querySelector('[data-test=\"username\"]');var p=document.querySelector('[data-test=\"password\"]');s.call(u,'usuario_malo');u.dispatchEvent(new Event('input',{bubbles:true}));s.call(p,'clave_mala');p.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('[data-test=\"login-button\"]').click();})();",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b4cd3e5-b984-46db-b91c-37ceb1be8f8b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=[data-test=\"error\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ad10d4e-a177-4f6f-9314-7bb18a74678a",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=[data-test=\"error\"]",
+      "targets": [],
+      "value": "Epic sadface: Username and password do not match any user in this service"
+    }]
+  }, {
+    "id": "f8125d3e-c692-4539-932e-6613854bf74c",
+    "name": "CP03 – Interaccion Dinamica",
+    "commands": [{
+      "id": "2323e3a0-9732-44b6-8151-289cef29c74c",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.saucedemo.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c73c7a67-23c9-417a-9e3e-71128e8866f0",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"username\"]",
+      "targets": [
+        ["css=*[data-test=\"username\"]", "css:data-attr"],
+        ["id=user-name", "id"],
+        ["name=user-name", "name"],
+        ["css=#user-name", "css:finder"],
+        ["xpath=//input[@id='user-name']", "xpath:attributes"],
+        ["xpath=//div[@id='login_button_container']/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b839530-81c8-4aa5-87de-b93466018264",
+      "comment": "",
+      "command": "executeScript",
+      "target": "(function(){var s=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;var u=document.querySelector('[data-test=\"username\"]');var p=document.querySelector('[data-test=\"password\"]');s.call(u,'standard_user');u.dispatchEvent(new Event('input',{bubbles:true}));s.call(p,'secret_sauce');p.dispatchEvent(new Event('input',{bubbles:true}));document.querySelector('[data-test=\"login-button\"]').click();})();",
+      "targets": [],
+      "value": "standard_user"
+    }, {
+      "id": "4997199c-3ede-44f6-a7be-3920599788fd",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"add-to-cart-sauce-labs-backpack\"]",
+      "targets": [
+        ["css=*[data-test=\"add-to-cart-sauce-labs-backpack\"]", "css:data-attr"],
+        ["id=add-to-cart-sauce-labs-backpack", "id"],
+        ["name=add-to-cart-sauce-labs-backpack", "name"],
+        ["css=#add-to-cart-sauce-labs-backpack", "css:finder"],
+        ["xpath=//button[@id='add-to-cart-sauce-labs-backpack']", "xpath:attributes"],
+        ["xpath=//div[@id='inventory_container']/div/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "14dde761-1a66-408d-bde5-58f07cd0a243",
+      "comment": "",
+      "command": "click",
+      "target": "css=*[data-test=\"shopping-cart-badge\"]",
+      "targets": [
+        ["css=*[data-test=\"shopping-cart-badge\"]", "css:data-attr"],
+        ["css=.shopping_cart_badge", "css:finder"],
+        ["xpath=//div[@id='shopping_cart_container']/a/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd8635a4-5e10-4720-b9f2-28991fc2c4bf",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.cart_item",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "945ac9f6-61a3-4498-8cfa-5bf3e397e90f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }, {
+    "id": "88f87bb3-d4be-44dd-9fd9-b66c5f9a34ae",
+    "name": "Suite_Regresion_Basica",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["963dc740-6493-461b-af3f-c6f258f3ec4b", "b11fb096-39b3-446a-b50b-3316c3835f05", "f8125d3e-c692-4539-932e-6613854bf74c"]
+  }],
+  "urls": ["https://www.saucedemo.com/"],
+  "plugins": []
+}
